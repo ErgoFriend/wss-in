@@ -1,0 +1,27 @@
+{
+  "name": "wss-in",
+  "version": "0.0.6",
+  "description": " API wrapper",
+  "main": "dist/index.js",
+  "author": "ErgoFriend",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ErgoFriend/wss-in/issues"
+  },
+  "homepage": "https://github.com/ErgoFriend/wss-in",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -r ts-node/register 'test/**/*.ts'",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "typescript": "^3.6.3"
+  }
+}
