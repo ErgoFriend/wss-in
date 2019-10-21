@@ -22,15 +22,25 @@ export default class Wssin {
       this.YOUR_ROOM_ID = YOUR_ROOM_ID;
     }
 
-    this.connenction = new WebSocket(
+    const url =
       "wss://connect.websocket.in/" +
-        YOUR_CHANNEL_ID +
-        "?room_id=" +
-        YOUR_ROOM_ID
-    );
+      this.YOUR_CHANNEL_ID +
+      "?room_id=" +
+      this.YOUR_ROOM_ID;
+
+    this.connenction = new WebSocket(url);
 
     const user = this.joinUser(name);
     this.user = user;
+  }
+
+  changeRoom(YOUR_ROOM_ID: string) {
+    const url =
+      "wss://connect.websocket.in/" +
+      this.YOUR_CHANNEL_ID +
+      "?room_id=" +
+      YOUR_ROOM_ID;
+    this.connenction = new WebSocket(url);
   }
 
   joinUser(name: string): User {
